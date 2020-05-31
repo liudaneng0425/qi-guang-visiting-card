@@ -9,6 +9,8 @@
     </swiper-item>
   </swiper>
 
+  <van-button type="primary">按钮</van-button>
+  
   <form bindsubmit='onSubmit'>  
     <button bindtap="chooseLocation"> 选择位置 </button>
   </form>
