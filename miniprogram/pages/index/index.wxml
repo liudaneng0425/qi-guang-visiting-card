@@ -2,33 +2,35 @@
 <view class="container">
 
   <swiper class="banner" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
-    <swiper-item wx:for="{{bannerList}}" wx:key="{{item.id}}">
+    <swiper-item wx:for="{{bannerArray}}" wx:key="{{item.id}}">
       <navigator url="{{item.link}}">
         <image src="{{item.image_url}}" background-size="cover"></image>
       </navigator>
     </swiper-item>
-  </swiper>
-
-  <van-button type="primary">按钮</van-button>
-  
-  <form bindsubmit='onSubmit'>  
-    <button bindtap="chooseLocation"> 选择位置 </button>
-  </form>
+  </swiper> 
+  <view style="flex-direction:column" >
+    <text style="font-weight: bold; font-size 220rpx">{{companyInfo.name}}</text>
+  </view>
  
   <van-cell-group>
-    <van-cell title="位置" icon="location-o" border="{{false}}" 
-    bind:click="viewLocation"
+    <van-cell 
+      title="{{companyInfo.map_addrress}}" 
+      icon="location" border="{{false}}" 
+      bind:click="viewLocation"
     />
+  </van-cell-group>
+  <van-cell-group>
+    <van-cell 
+      title="服务时间：7 X 24 小时" 
+      icon="clock" border="{{false}}" 
+    />
+  </van-cell-group>
+  <van-cell-group>
+    <van-cell 
+      title="{{companyInfo.telephone}}" 
+      icon="phone-circle" border="{{false}}" 
+      bind:click="callPhone"
+    />   
   </van-cell-group>
-
-  <view class="uploader">
-    <view class="uploader-text" bindtap="onClick">
-      <text>临时提取文件</text>
-    </view>
-    <view class="uploader-container" wx:if="{{imgUrl}}">
-      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
-    </view>
-  </view>
-
 
 </view>

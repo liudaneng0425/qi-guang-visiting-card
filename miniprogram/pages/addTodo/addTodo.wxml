@@ -1,0 +1,25 @@
+<!--pages/addTodo/addTodo.wxml-->
+
+<form bindsubmit="onSubmit">
+  <input name="title"></input>
+  <button form-type="submit">提交</button>
+</form>
+
+<van-cell-group>
+  <block wx:for="{{tasks}}">
+    <van-cell title="{{item.title}}"  />
+  </block>
+</van-cell-group>
+
+  <form bindsubmit='onSubmit'>  
+    <button bindtap="chooseLocation"> 选择位置 </button>
+  </form>
+
+  <view class="uploader">
+    <view class="uploader-text" bindtap="onClick">
+      <text>临时提取文件</text>
+    </view>
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </view>
