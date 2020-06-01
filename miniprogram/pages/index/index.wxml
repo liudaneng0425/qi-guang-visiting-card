@@ -14,26 +14,34 @@
     <text style="color: #4fb14f">十年持续发电，二十五年保修</text>
   </view>
 
- 
-  <van-cell-group>
-    <van-cell 
-      title="{{companyInfo.map_addrress}}" 
-      icon="location" border="{{false}}" 
-      bind:click="viewLocation"
-    />
-  </van-cell-group>
-  <van-cell-group>
-    <van-cell 
-      title="服务时间：7 X 24 小时" 
-      icon="clock" border="{{false}}" 
-    />
-  </van-cell-group>
-  <van-cell-group>
-    <van-cell 
-      title="{{companyInfo.telephone}}" 
-      icon="phone-circle" border="{{false}}" 
-      bind:click="callPhone"
-    />   
-  </van-cell-group>
+  <view>
+    <van-cell-group>
+      <van-cell 
+        title="\n{{companyInfo.map_addrress}}\n" 
+        title-class="cell-title"
+        icon="location" border="{{false}}" 
+        bind:click="viewLocation"
+      />
+    </van-cell-group>
+  </view>
 
+  <view class="cell-group">
+    <van-cell-group>
+      <van-cell 
+        title="服务时间：7 X 24 小时" 
+        title-class="cell-title"
+        icon="clock" border="{{false}}" 
+      />
+    </van-cell-group>
+  </view>
+  <view class="cell-group">
+    <van-cell-group>
+      <van-cell 
+        title="{{companyInfo.telephone}}" 
+        title-class="cell-title-phone"
+        icon="phone-circle" border="{{false}}" 
+        bind:click="callPhone"
+      />   
+    </van-cell-group>
+  </view>
 </view>
