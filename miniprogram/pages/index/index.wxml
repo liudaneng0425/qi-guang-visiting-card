@@ -8,9 +8,12 @@
       </navigator>
     </swiper-item>
   </swiper> 
-  <view style="flex-direction:column" >
-    <text style="font-weight: bold; font-size 220rpx">{{companyInfo.name}}</text>
+
+  <view class="nameView" >
+    <text class="nameTxt" >\n{{companyInfo.name}}\n </text>
+    <text style="color: #4fb14f">十年持续发电，二十五年保修</text>
   </view>
+
  
   <van-cell-group>
     <van-cell 
